@@ -2,11 +2,17 @@ language: android
 jdk: oraclejdk7
 android:
   components:
-    - build-tools-19.1.0  
+    - build-tools-19.1.0
+    # API 19 (targetSdk)
+    - android-19
+    - sys-img-armeabi-v7a-android-19
+    # API 16 (minSdk)
+    - android-16
+    - sys-img-armeabi-v7a-android-16
 
 env:
   matrix:
-    - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
+    - ANDROID_TARGET=android-16 ANDROID_ABI=armeabi-v7a
     - ANDROID_TARGET=android-19 ANDROID_ABI=armeabi-v7a
 
 before_script:
