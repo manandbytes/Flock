@@ -17,7 +17,9 @@ env:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y calendarserver
+  - sudo apt-get install -y augeas-tools augeas-lenses calendarserver
+  - sudo augtool set /files/etc/default/calendarserver/start_calendarserver yes
+  - sudo service calendarserver restart
 
 before_script:
   # Create and start emulator
